@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <a href="index.html" class="back-arrow">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="weather-app">
+        <div class="app-header">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Roots Logo" class="logo" style="height: 40px; width: auto;">
+                <h1 class="logo-text">Weather</h1>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for a city...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="location-button">
+                    <i class="fas fa-location-dot"></i>
+                </button>
+            </div>
+            <div class="unit-toggle">
+                <button class="temp-unit active" data-unit="celsius">°C</button>
+                <button class="temp-unit" data-unit="fahrenheit">°F</button>
+            </div>
+        </div>
+
+        <div class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="error-container hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="error-message"></p>
+        </div>
+
+        <div class="weather-info hidden">
+            <div class="current-weather">
+                <div class="weather-header">
+                    <h2 class="city-name"></h2>
+                    <p class="current-date"></p>
+                </div>
+                
+                <div class="weather-main">
+                    <img src="" alt="Weather Icon" class="weather-icon">
+                    <div>
+                        <h2 class="temperature"></h2>
+                        <p class="weather-description"></p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail">
+                        <i class="fas fa-temperature-high"></i>
+                        <div class="detail-info">
+                            <span class="feels-like"></span>
+                            <p>Feels Like</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-droplet"></i>
+                        <div class="detail-info">
+                            <span class="humidity"></span>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <div class="detail-info">
+                            <span class="wind-speed"></span>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-gauge-high"></i>
+                        <div class="detail-info">
+                            <span class="pressure"></span>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="city-select-modal hidden">
+        <div class="modal-content">
+            <h3>Select a City</h3>
+            <p>Multiple cities found. Please select one:</p>
+            <div class="city-list"></div>
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roots</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header id ='header'>
+        <div><a href=''>
+            <img class =logo src='images/logo.png'> </a>
+            <p>"Stay Grounded"</p></div>
+    
+            <ul>
+                <li><a id='active' href='#'>Home</a></li>
+                <li><a href='#About' >About</a></li>
+                <li><a href='info.html'>Safety</a></li>
+                <li><a href='weather.html'>Weather</a></li>
+                <li><a href="https://www.steepandcheap.com/" target="_blank">Shop</a></li>
+                
+                
+            </ul>
+        
+    </header>
+    <section>
+        <h2 id='text'><span>It's time for a new</span><br>Adventure</h2>
+        <img src='images/bird1.png' id='bird1'>
+        <img src='images/bird2.png' id='bird2'>
+        <img src='images/forest.png' id='forest'>
+        <a href="https://americanhiking.org/hiking-resources/#hikes-near-you" target="_blank" id='btn'>Explore</a>
+        <img src='images/rocks.png' id='rocks'>
+        <img src='images/water.png' id='water'>
+
+    </section>
+    <div id='About' class='sec'>
+        <h2>About Our Mission</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <div class="mission-statement">
+                    <h3><i class="fas fa-mountain"></i> Our Purpose</h3>
+                    <p>As more people rediscover the joy of outdoor activities, we're here to ensure your hiking adventures are both safe and memorable. Our mission is to provide comprehensive guidance for both novice and experienced hikers.</p>
+                </div>
+
+                <div class="key-features">
+                    <h3><i class="fas fa-list-check"></i> What To Expect</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-map-location-dot"></i>
+                            <h4>Trail Finder</h4>
+                            <p>Discover hiking trails near you with our interactive map and detailed trail information.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cloud-sun"></i>
+                            <h4>Weather Updates</h4>
+                            <p>Real-time weather information to help plan your hiking adventures safely.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-heart"></i>
+                            <h4>Safety Guides</h4>
+                            <p>Comprehensive safety information covering weather, terrain, wildlife, and emergency preparedness.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-store"></i>
+                            <h4>Gear Shop</h4>
+                            <p>Access to quality hiking gear at competitive prices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="safety-focus">
+                    <h3><i class="fas fa-hand-holding-heart"></i> Safety First</h3>
+                    <p>Our guides cover essential safety topics including:</p>
+                    <ul class="safety-list">
+                        <li><i class="fas fa-bolt"></i> Weather hazards and precautions</li>
+                        <li><i class="fas fa-mountain"></i> Terrain navigation and awareness</li>
+                        <li><i class="fas fa-paw"></i> Wildlife encounters and safety</li>
+                        <li><i class="fas fa-temperature-half"></i> Cold weather preparation</li>
+                        <li><i class="fas fa-kit-medical"></i> Emergency response guidelines</li>
+                        <li><i class="fas fa-compass"></i> Navigation and trail marking</li>
+                    </ul>
+                </div>
+
+                <div class="team-section">
+                    <h3><i class="fas fa-users"></i> Our Team</h3>
+                    <p>Created with passion by Emmanuel M - an outdoor enthusiast committed to making hiking safer and more accessible for everyone.</p>
+                </div>
+
+                <div class="call-to-action">
+                    <p>Get your gear, check the weather, know your safety, and get outside!</p>
+                    <div class="cta-buttons">
+                        <a href="https://americanhiking.org/hiking-resources/#hikes-near-you" class="cta-button primary">Find Trails</a>
+                        <a href="info.html" class="cta-button secondary">Safety Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let text=document.getElementById('text')
+        let bird1=document.getElementById('bird1')
+        let bird2=document.getElementById('bird2')
+        let btn=document.getElementById('btn')
+        let rocks=document.getElementById('rocks')
+        let forest=document.getElementById('forest')
+        let water=document.getElementById('water')
+        let header=document.getElementById('header')
+
+        window.addEventListener('scroll', function(){
+            let value=window.scrollY;
+            text.style.top=50+value*-.5+'%'
+            bird1.style.top= value*-1+'%'
+            bird1.style.left= value*1+'%'
+            bird2.style.top= value*-1+'%'
+            bird2.style.left= value*-1+'%'
+            btn.style.marginTop=value*1.5+'px'
+            rocks.style.top=value*.12+'px'
+            forest.style.top=value*.25+'px'
+            
+            water.style.top=value*-.01+'px'
+
+        })
+       
+    </script>
+</body>
+</html>

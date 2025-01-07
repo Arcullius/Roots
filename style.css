@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    overflow-x: hidden;
+    background: white;
+    min-height: 100vh;
+}
+#header{
+    background: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    margin-top: 0px;
+    Left: 0;
+    width:100%;
+    padding:10px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    border-radius:10px;
+}
+#header .logo{
+   width:10%;
+   height:10%;
+   border-radius: 15px;
+    
+
+}
+#header div{
+    
+    color:#094b65;
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+    margin-left: -500px;
+    
+}
+#header ul{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+}
+#header ul li{
+    list-style: none;
+    margin-left: 20px;
+
+
+}
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #094b65;
+    border-radius:20px;
+    transition: background-color .2s, color .5s, box-shadow .2s;
+    
+}
+#header ul li a:hover{
+  background:#094b65;
+  color:#fff;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.25);
+}
+#header ul li a:active{
+  background:#094b65;
+  color:#fff;
+  cursor: pointer;
+  opacity: 0.7;
+}
+#active{
+  background:#094b65;
+  color:#fff
+}
+
+section{
+    position: relative;
+    width:100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+section::before{
+    content:'';
+    position: absolute;
+    bottom:0;
+    Left:0;
+    width:100%;
+    height: 100px;
+    background:linear-gradient(to top, #094b65,transparent);
+    z-index:10 ;
+}
+section img{
+    position: absolute;
+    top:0px;
+    Left:0;
+    width:100%;
+    height:120%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section #text{
+    position: absolute;
+    color:#094b65;
+    font-size: 10vw;
+    text-align: center;
+    line-height: .55em;
+    font-family: 'Rancho',cursive;
+    transform: translateY(-50%);
+
+}
+
+section #text span {
+    font-size: .20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+#btn{
+    
+    text-decoration: none;
+    display:inline-block;
+    padding:8px 30px;
+    background: white;
+    color:#094b65;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
+}
+.sec {
+    position: relative;
+    padding:100px;
+    background: #094b65;
+    
+}
+.sec h2{
+    font-size: 3.5em;
+    color:#fff;
+    margin-bottom: 10px;
+    
+}
+.sec p{
+    font-size: 1em;
+    color:#fff;
+}
+
+/* About Section Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-text {
+    color: #fff;
+}
+
+.mission-statement,
+.key-features,
+.safety-focus,
+.team-section,
+.call-to-action {
+    margin-bottom: 3rem;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-text h3 i {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.safety-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.safety-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.safety-list li:hover {
+    transform: translateX(5px);
+}
+
+.safety-list li i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.team-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.call-to-action {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.call-to-action p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--primary-color);
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .call-to-action p {
+        font-size: 1.2rem;
+    }
+}
+
+
+
