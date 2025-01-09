@@ -270,31 +270,117 @@ body {
 }
 
 @media (max-width: 768px) {
-    .weather-app {
-        padding: 20px;
+    body {
+        padding: 10px;
     }
 
-    .city-name {
-        font-size: 28px;
+    .weather-app {
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .unit-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .temp-unit {
+        flex: 1;
+        max-width: 120px;
+    }
+
+    .weather-main {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .weather-icon {
+        width: 100px;
+        height: 100px;
     }
 
     .temperature {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .weather-details {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .forecast-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .forecast-card {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .forecast-icon {
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media (max-width: 480px) {
-    .search-container {
-        flex-direction: column;
-        align-items: stretch;
+    .back-arrow {
+        top: 10px;
+        left: 10px;
     }
 
-    .unit-toggle {
-        justify-content: center;
+    .weather-app {
+        padding: 15px;
+    }
+
+    .city-name {
+        font-size: 24px;
+    }
+
+    .temperature {
+        font-size: 32px;
+    }
+
+    .weather-description {
+        font-size: 16px;
+    }
+
+    .detail {
+        padding: 12px;
+    }
+
+    .detail i {
+        font-size: 20px;
+    }
+
+    .detail-info span {
+        font-size: 16px;
+    }
+
+    .detail-info p {
+        font-size: 12px;
+    }
+
+    .city-select-modal .modal-content {
+        width: 90%;
+        max-width: none;
+        margin: 20px;
+        padding: 15px;
     }
 }
 
