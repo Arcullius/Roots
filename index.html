@@ -11,20 +11,24 @@
 <body>
     
     <header id ='header'>
-        <div><a href=''>
-            <img class =logo src='images/logo.png'> </a>
-            <p>"Stay Grounded"</p></div>
-    
-            <ul>
-                <li><a id='active' href='#'>Home</a></li>
-                <li><a href='#About' >About</a></li>
-                <li><a href='info.html'>Safety</a></li>
-                <li><a href='weather.html'>Weather</a></li>
-                <li><a href="https://www.steepandcheap.com/" target="_blank">Shop</a></li>
-                
-                
-            </ul>
-        
+        <div class="logo-container">
+            <div>
+                <a href=''>
+                    <img class="logo" src='images/logo.png'>
+                </a>
+                <p>"Stay Grounded"</p>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a id='active' href='#'>Home</a></li>
+            <li><a href='#About'>About</a></li>
+            <li><a href='info.html'>Safety</a></li>
+            <li><a href='weather.html'>Weather</a></li>
+            <li><a href="https://www.steepandcheap.com/" target="_blank">Shop</a></li>
+        </ul>
     </header>
     <section>
         <h2 id='text'><span>It's time for a new</span><br>Adventure</h2>
@@ -109,6 +113,28 @@
         let water=document.getElementById('water')
         let header=document.getElementById('header')
 
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('#header ul');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
         window.addEventListener('scroll', function(){
             let value=window.scrollY;
             text.style.top=50+value*-.5+'%'
@@ -119,11 +145,8 @@
             btn.style.marginTop=value*1.5+'px'
             rocks.style.top=value*.12+'px'
             forest.style.top=value*.25+'px'
-            
             water.style.top=value*-.01+'px'
-
         })
-       
     </script>
 </body>
 </html>

@@ -11,6 +11,8 @@ body{
     overflow-x: hidden;
     background: white;
     min-height: 100vh;
+    width: 100vw;
+    position: relative;
 }
 #header{
     background: #fff;
@@ -18,7 +20,7 @@ body{
     position: sticky;
     top:0;
     margin-top: 0px;
-    Left: 0;
+    left:0;
     width:100%;
     padding:10px 100px;
     display: flex;
@@ -27,22 +29,32 @@ body{
     z-index: 10000;
     border-radius:10px;
 }
-#header .logo{
-   width:10%;
-   height:10%;
-   border-radius: 15px;
-    
-
+#header .logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
 }
-#header div{
-    
-    color:#094b65;
+#header .logo-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 50px;
+}
+#header .logo{
+    width: 60px;
+    height: auto;
+    border-radius: 15px;
+    margin-left: -80px;
+}
+#header .logo-container p {
+    color: #094b65;
     font-weight: 700;
     font-size: 1em;
     text-decoration: none;
     text-align: center;
-    margin-left: -500px;
-    
+    margin-top: 5px;
+    margin-left: -80px;
 }
 #header ul{
     display:flex; 
@@ -52,8 +64,6 @@ body{
 #header ul li{
     list-style: none;
     margin-left: 20px;
-
-
 }
 header ul li a{
     text-decoration: none;
@@ -82,11 +92,13 @@ header ul li a{
 
 section{
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100vh;
-    display:flex;
+    min-height: 500px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 section::before{
     content:'';
@@ -100,10 +112,10 @@ section::before{
 }
 section img{
     position: absolute;
-    top:0px;
-    Left:0;
-    width:100%;
-    height:120%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     pointer-events: none;
 }
@@ -325,35 +337,70 @@ section #text span {
     /* Header Styles */
     #header {
         padding: 10px 20px;
-        flex-direction: column;
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    #header .logo-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #header .logo-container div {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        margin-right: 0;
     }
 
     #header .logo {
-        width: 30%;
+        width: 40px;
         height: auto;
-        margin-bottom: 10px;
+        margin-left: 0;
     }
 
-    #header div {
+    #header .logo-container p {
+        margin-top: 0;
+        font-size: 0.9em;
         margin-left: 0;
-        margin-bottom: 10px;
     }
 
     #header ul {
+        display: none;
         flex-direction: column;
         width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    #header ul.active {
+        display: flex;
     }
 
     #header ul li {
-        margin: 5px 0;
+        margin: 0;
         width: 100%;
         text-align: center;
     }
 
     #header ul li a {
         display: block;
-        padding: 10px;
+        padding: 12px;
         width: 100%;
+        border-radius: 0;
+    }
+
+    #header ul li a:hover {
+        background: rgba(9, 75, 101, 0.1);
+        box-shadow: none;
     }
 
     /* Section Styles */
@@ -433,6 +480,147 @@ section #text span {
 
     .feature-item h4 {
         font-size: 1.1rem;
+    }
+}
+
+/* Mobile Navigation Styles */
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    color: #094b65;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #header {
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    #header .logo-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #header .logo-container div {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    #header .logo {
+        width: 40px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    #header .logo-container p {
+        margin-top: 0;
+        font-size: 0.9em;
+        margin-left: 0;
+    }
+
+    #header ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    #header ul.active {
+        display: flex;
+    }
+
+    #header ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    #header ul li a {
+        display: block;
+        padding: 12px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #header ul li a:hover {
+        background: rgba(9, 75, 101, 0.1);
+        box-shadow: none;
+    }
+}
+
+/* Add landscape mode specific styles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    section #text {
+        font-size: 8vw;
+        padding: 20px 0;
+    }
+
+    section #text span {
+        font-size: 0.25em;
+    }
+
+    #btn {
+        transform: translateY(20px);
+    }
+
+    .sec {
+        padding: 40px 20px;
+    }
+
+    /* Adjust header for landscape */
+    #header {
+        position: relative;
+    }
+
+    /* Ensure images cover properly in landscape */
+    section img {
+        height: 100%;
+        object-position: center;
+    }
+}
+
+/* Enhance mobile styles */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    section {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .sec {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
