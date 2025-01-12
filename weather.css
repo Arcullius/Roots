@@ -9,11 +9,14 @@
 
 body {
     min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(135deg, #00B4DB, #0083B0);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    overflow-x: hidden;
 }
 
 .back-arrow {
@@ -40,6 +43,7 @@ body {
 .weather-app {
     width: 100%;
     max-width: 1000px;
+    margin: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -273,8 +277,10 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 0;
         align-items: flex-start;
+        min-height: 100vh;
+        height: auto;
     }
 
     .back-arrow {
@@ -285,9 +291,11 @@ body {
     }
 
     .weather-app {
+        margin: 10px;
         padding: 15px;
         margin-top: 50px;
         border-radius: 15px;
+        min-height: calc(100vh - 20px);
     }
 
     .app-header {
@@ -617,4 +625,71 @@ body {
     color: #fff;
     font-size: 1.4rem;
     font-weight: 600;
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding: 0;
+        height: auto;
+        min-height: 100vh;
+        position: relative;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .weather-app {
+        margin: 10px;
+        padding: 15px;
+        height: auto;
+        min-height: calc(100vh - 20px);
+    }
+
+    .search-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .search-box {
+        flex-direction: row;
+        min-width: auto;
+    }
+
+    .location-button {
+        width: auto;
+    }
+
+    .location-button::after {
+        content: none;
+    }
+
+    .weather-details {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .forecast-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    .forecast-card {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .forecast-icon {
+        margin: 5px auto;
+    }
+
+    /* Prevent touch action issues */
+    * {
+        touch-action: pan-x pan-y;
+        -webkit-touch-callout: none;
+    }
 }
